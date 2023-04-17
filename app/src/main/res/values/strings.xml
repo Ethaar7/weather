@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">weather</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_18_c">18ْ C</string>
+    <string name="iraq_maysan">Iraq/Maysan</string>
+    <string name="monday_12_feb">Monday , 12 Feb</string>
+</resources>
