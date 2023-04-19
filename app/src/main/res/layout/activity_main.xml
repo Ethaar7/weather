@@ -6,11 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <include
-        android:id="@+id/wthar"
-        layout="@layout/fragment_weather"
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/background"
+        app:cardCornerRadius="@dimen/spacing_normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:context=".ui.WeatherFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/card_wther"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:paddingBottom="@dimen/spacing_normal"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp">
+
+
+            <TextView
+                android:id="@+id/degreeCelsius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/_18_c" />
+
+            <TextView
+                android:id="@+id/cityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/text_content_color"
+                android:textSize="@dimen/text_normal"
+                app:layout_constraintStart_toStartOf="@+id/degreeCelsius"
+                app:layout_constraintTop_toBottomOf="@+id/degreeCelsius"
+                tools:text="@string/iraq_maysan" />
+
+
+            <ImageView
+                android:id="@+id/image_Weather"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.598"
+                app:layout_constraintStart_toEndOf="@+id/degreeCelsius"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/cloudy" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
 
 
     <androidx.cardview.widget.CardView
@@ -25,7 +86,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wthar">
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
         <TextView
             android:layout_width="match_parent"
@@ -33,15 +94,16 @@
             android:layout_marginStart="@dimen/spacing_normal"
             android:layout_marginTop="@dimen/spacing_normal"
             android:drawableStart="@drawable/wind"
-            android:text="wind"
+            android:text="@string/wind"
             android:textColor="@color/text_content_color" />
 
         <TextView
+            android:id="@+id/wind"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_normal"
             android:layout_marginTop="32dp"
-            android:text="15 km/h" />
+            tools:text="@string/_15_km_h" />
 
     </androidx.cardview.widget.CardView>
 
@@ -56,23 +118,24 @@
         app:layout_constraintEnd_toStartOf="@+id/cardView3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cardView2"
-        app:layout_constraintTop_toBottomOf="@+id/wthar">
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_normal"
             android:layout_marginTop="@dimen/spacing_normal"
             android:drawableStart="@drawable/waterdrops"
-            android:text="Humidity"
+            android:text="@string/humidity"
             android:textColor="@color/text_content_color" />
 
         <TextView
+            android:id="@+id/humidity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
-            android:text="24%" />
+            tools:text="@string/_24" />
 
     </androidx.cardview.widget.CardView>
 
@@ -87,7 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/wthar">
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
         <TextView
             android:layout_width="match_parent"
@@ -95,15 +158,16 @@
             android:layout_marginStart="@dimen/spacing_normal"
             android:layout_marginTop="@dimen/spacing_normal"
             android:drawableStart="@drawable/cloud_rain"
-            android:text=" Rain"
+            android:text="@string/rain"
             android:textColor="@color/text_content_color" />
 
         <TextView
+            android:id="@+id/rain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
-            android:text="99%" />
+            tools:text="@string/_99" />
 
     </androidx.cardview.widget.CardView>
 
@@ -111,19 +175,30 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="suggestions Today"
         android:textColor="@color/text_color"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="318dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
     <ImageView
-        android:layout_width="158dp"
-        android:layout_height="193dp"
-        android:src="@drawable/frame_858"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="360dp" />
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/spacing_smal"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/nice87"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.12" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

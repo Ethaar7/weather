@@ -4,4 +4,5 @@
     <dimen name="text_normal">14sp</dimen>
     <dimen name="text_small">10sp</dimen>
     <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="spacing_smal">8dp</dimen>
 </resources>

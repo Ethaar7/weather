@@ -9,7 +9,6 @@ class ApiClient {
 
 
     fun makeRequest(cityName: String) : Call {
-
         val request = Request.Builder()
             .url(httpUrl(cityName))
             .build()
@@ -24,6 +23,7 @@ class ApiClient {
             .addPathSegment(DATA)
             .addPathSegment(VERSION)
             .addPathSegment(WEATHER)
+            .addQueryParameter(CITYNAME,cityName)
             .addQueryParameter(API_ID2, BuildConfig.API_ID)
             .build()
 
@@ -36,6 +36,7 @@ class ApiClient {
         const val VERSION = "2.5"
         const val WEATHER = "weather"
         const val API_ID2 = "appid"
+        const val CITYNAME = "q"
     }
 
 

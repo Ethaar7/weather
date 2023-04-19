@@ -1,10 +1,10 @@
 package com.example.weather.ui
 
-interface IView
+import com.example.weather.data.Weather
 
-interface IWeather: IView {
-    fun showLoading()
-    fun hideLoading()
-    fun onWeatherSuccess()
+
+interface IWeather {
+
+    fun onWeatherSuccess(weather:Weather)
     fun onWeatherFailure(error: String)
 }

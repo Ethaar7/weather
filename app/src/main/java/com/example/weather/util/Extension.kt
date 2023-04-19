@@ -11,17 +11,17 @@ fun ImageView.loadImage(url: String) {
         .into(this)
 }
 
-fun kelvinToCelsius(kelvin: Double): Double {
-    return kelvin - 273.15
+fun String.kelvinToCelsius(): Double {
+    return this.toDouble() - 273.15
 }
 
-fun metersPerSecondToKilometersPerHour(mps: Double): Double {
-    return mps * 3.6
+fun String.metersPerSecondToKilometersPerHour(): Double {
+    return this.toDouble() * 3.6
 }
 
 
-fun getIcon() {
-    mapOf(
+fun getIcon()=
+     mapOf(
         "01d" to "https://raw.githubusercontent.com/mustafa-sab3alarab/The-Chance-Plus-Docs/main/weather_icon/01d.png",
         "01n" to "https://raw.githubusercontent.com/mustafa-sab3alarab/The-Chance-Plus-Docs/main/weather_icon/01n.png",
         "02d" to "https://raw.githubusercontent.com/mustafa-sab3alarab/The-Chance-Plus-Docs/main/weather_icon/02d.png",
@@ -40,8 +40,8 @@ fun getIcon() {
         "50d" to "https://raw.githubusercontent.com/mustafa-sab3alarab/The-Chance-Plus-Docs/main/weather_icon/50d.png",
         "50n" to "https://raw.githubusercontent.com/mustafa-sab3alarab/The-Chance-Plus-Docs/main/weather_icon/50n.png"
     )
-}
 
 
-//    binding.image.loadImage(getIcon()[weather.weatherdata.Icon])
+
+
 

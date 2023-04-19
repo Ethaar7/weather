@@ -5,4 +5,10 @@
     <string name="_18_c">18ْ C</string>
     <string name="iraq_maysan">Iraq/Maysan</string>
     <string name="monday_12_feb">Monday , 12 Feb</string>
+    <string name="_99">99%</string>
+    <string name="rain">Rain</string>
+    <string name="_24">24%</string>
+    <string name="humidity">Humidity</string>
+    <string name="_15_km_h">15 km/h</string>
+    <string name="wind">wind</string>
 </resources>

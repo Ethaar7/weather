@@ -9,18 +9,16 @@ class WeatherPresenter(private val view: IWeather) {
 
 
     fun getWeather(cityName: String) {
-        view.showLoading()
-        service.getWeather("Maysan", ::onSuccess, ::onFailure)
+        service.getWeather(cityName, ::onSuccess, ::onFailure)
     }
 
     private fun onSuccess(response: Weather) {
-        view.onWeatherSuccess()
-        view.hideLoading()
+        view.onWeatherSuccess(response)
+
     }
 
     private fun onFailure(message: String?) {
-        view.onWeatherFailure(toString())
-        view.hideLoading()
+        view.onWeatherFailure(message.toString())
     }
 
 
