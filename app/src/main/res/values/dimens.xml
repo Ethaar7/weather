@@ -5,4 +5,11 @@
     <dimen name="text_small">10sp</dimen>
     <dimen name="spacing_normal">16dp</dimen>
     <dimen name="spacing_smal">8dp</dimen>
+    <dimen name="text_no">16sp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_xlarge">32dp</dimen>
+    <dimen name="with_card_small">98dp</dimen>
+    <dimen name="height_card_small">64dp</dimen>
+    <dimen name="with_fix">150dp</dimen>
+    <dimen name="height_fix">150dp</dimen>
 </resources>

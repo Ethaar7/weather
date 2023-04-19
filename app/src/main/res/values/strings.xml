@@ -11,4 +11,5 @@
     <string name="humidity">Humidity</string>
     <string name="_15_km_h">15 km/h</string>
     <string name="wind">wind</string>
+    <string name="suggestions_today">suggestions Today</string>
 </resources>
